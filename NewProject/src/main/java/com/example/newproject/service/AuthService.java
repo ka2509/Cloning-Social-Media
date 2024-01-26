@@ -27,7 +27,7 @@ public class AuthService {
     private JwtProvider jwtProvider;
 
     @Autowired
-    private CustomUserDetailsServiceImplementation customUserDetails;
+    private UserService customUserDetails;
     public AuthResponse signUpUser(User user) throws UserException {
         String email = user.getEmail();
         String password = user.getPassword();

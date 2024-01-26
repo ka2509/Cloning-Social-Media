@@ -3,11 +3,11 @@ package com.example.newproject.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Data
-
 public class Threads {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,12 +27,15 @@ public class Threads {
     private List<Threads> replies;
 
     @ManyToMany
-    private List<User> repost;
+    private List<User> repostUser;
 
     @ManyToOne
     private Threads replyFor;
 
     private boolean isReply;
     private boolean isThread;
+
+    private LocalDateTime createdAt;
+
 
 }
